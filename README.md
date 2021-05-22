@@ -4,6 +4,29 @@
 
 ---
 
+## 使用方式
+
+```js
+const {
+  transformToLineMessage,
+  transformToLineMessages,
+  transformToFacebookMessage,
+  transformToFacebookMessages,
+} = require('@chi0307/transform-chatbo-message');
+
+let message = {
+  type: 'text',
+  text: 'Hello World!!',
+};
+
+let facebookMessage = transformToFacebookMessage(message);
+let lineMessage = transformToLineMessage(message);
+
+// 將 Messsage 進行推播
+```
+
+---
+
 ## 文字訊息
 
 ```typescript

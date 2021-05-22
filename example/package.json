@@ -1,0 +1,19 @@
+{
+  "name": "transform-chatbot-message-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chi0307/transform-chatbo-message": "^1.0.0",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
