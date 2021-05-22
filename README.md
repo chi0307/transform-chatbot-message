@@ -12,7 +12,7 @@ const {
   transformToLineMessages,
   transformToFacebookMessage,
   transformToFacebookMessages,
-} = require('@chi0307/transform-chatbo-message');
+} = require('@chi0307/transform-chatbot-message');
 
 let message = {
   type: 'text',
