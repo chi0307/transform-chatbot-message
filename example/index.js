@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { transformToLineMessage, transformToFacebookMessage } = require('@chi0307/transform-chatbo-message');
+const { transformToLineMessage, transformToFacebookMessage } = require('@chi0307/transform-chatbot-message');
 const axios = require('axios');
 
 const LINE_TOKEN = process.env.LINE_TOKEN;
