@@ -6,7 +6,7 @@
 
 ## 使用方式
 
-```js
+```javascript
 const {
   transformToLineMessage,
   transformToLineMessages,
@@ -146,9 +146,9 @@ let lineMessage = transformToLineMessage(message);
 
 ```typescript
 {
-  type: 'postback',
-  title: String,
-  data: String
+  "type": "postback",
+  "title": String,
+  "data": String
 }
 ```
 
@@ -163,9 +163,9 @@ let lineMessage = transformToLineMessage(message);
 
 ```typescript
 {
-  type: 'url',
-  title: String,
-  url: String
+  "type": "url",
+  "title": String,
+  "url": String
 }
 ```
 
@@ -180,9 +180,9 @@ let lineMessage = transformToLineMessage(message);
 
 ```typescript
 {
-  type: 'phone',
-  title: String,
-  number: String
+  "type": "phone",
+  "title": String,
+  "number": String
 }
 ```
 

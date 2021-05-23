@@ -1,7 +1,7 @@
 /**
  * line 按鈕「 postback 」事件
  */
-export type LinePostbackAction = {
+type LinePostbackAction = {
   type: 'postback';
   label: String;
   data: String;
@@ -10,7 +10,7 @@ export type LinePostbackAction = {
 /**
  * line 按鈕「 url 」事件
  */
-export type LineUrlAction = {
+type LineUrlAction = {
   type: 'uri';
   label: String;
   uri: String;
@@ -19,8 +19,12 @@ export type LineUrlAction = {
 /**
  * line 按鈕「 phone 」事件
  */
-export type LinePhoneAction = {
+type LinePhoneAction = {
   type: 'uri';
   label: String;
   uri: String;
 };
+
+type LineAction = LinePostbackAction | LineUrlAction | LinePhoneAction;
+
+export { LineAction, LinePostbackAction, LineUrlAction, LinePhoneAction };

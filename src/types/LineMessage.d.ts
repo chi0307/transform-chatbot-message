@@ -1,11 +1,9 @@
-import { LinePostbackAction, LineUrlAction, LinePhoneAction } from './LineActions';
-
-type LineAction = LinePostbackAction | LineUrlAction | LinePhoneAction;
+import { LineAction } from './LineAction';
 
 /**
  * line 文字訊息
  */
-export type LineTextMessage = {
+type LineTextMessage = {
   type: 'text';
   text: String;
 };
@@ -13,7 +11,7 @@ export type LineTextMessage = {
 /**
  * line 圖片訊息
  */
-export type LineImageMessage = {
+type LineImageMessage = {
   type: 'image';
   originalContentUrl: String;
   previewImageUrl: String;
@@ -22,7 +20,7 @@ export type LineImageMessage = {
 /**
  * line 影片訊息
  */
-export type LineVideoMessage = {
+type LineVideoMessage = {
   type: 'video';
   originalContentUrl: String;
   previewImageUrl: String;
@@ -31,7 +29,7 @@ export type LineVideoMessage = {
 /**
  * line 聲音訊息
  */
-export type LineAudioMessage = {
+type LineAudioMessage = {
   type: 'audio';
   originalContentUrl: String;
   duration: Number;
@@ -40,7 +38,7 @@ export type LineAudioMessage = {
 /**
  * line 按鈕訊息
  */
-export type LineButtonMessage = {
+type LineButtonMessage = {
   type: 'template';
   altText: String;
   template: {
@@ -54,7 +52,7 @@ export type LineButtonMessage = {
 /**
  * line 輪播訊息
  */
-export type LineCarouselMessage = {
+type LineCarouselMessage = {
   type: 'template';
   altText: String;
   template: {
@@ -66,4 +64,24 @@ export type LineCarouselMessage = {
       actions: Array<LineAction>;
     }>;
   };
+};
+
+type LineMessage =
+  | LineTextMessage
+  | LineImageMessage
+  | LineVideoMessage
+  | LineAudioMessage
+  | LineButtonMessage
+  | LineCarouselMessage;
+type LineMessages = Array<LineMessage>;
+
+export {
+  LineMessages,
+  LineMessage,
+  LineTextMessage,
+  LineImageMessage,
+  LineVideoMessage,
+  LineAudioMessage,
+  LineButtonMessage,
+  LineCarouselMessage,
 };

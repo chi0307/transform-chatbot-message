@@ -1,18 +1,16 @@
-import { FacebookPostbackAction, FacebookUrlAction, FacebookPhoneAction } from './FacebookActions';
-
-type FacebookAction = FacebookPostbackAction | FacebookUrlAction | FacebookPhoneAction;
+import { FacebookAction } from './FacebookAction';
 
 /**
  * facebook 文字訊息
  */
-export type FacebookTextMessage = {
+type FacebookTextMessage = {
   text: String;
 };
 
 /**
  * facebook 圖片訊息
  */
-export type FacebookImageMessage = {
+type FacebookImageMessage = {
   attachment: {
     type: 'image';
     payload: {
@@ -24,7 +22,7 @@ export type FacebookImageMessage = {
 /**
  * facebook 影片訊息
  */
-export type FacebookVideoMessage = {
+type FacebookVideoMessage = {
   attachment: {
     type: 'video';
     payload: {
@@ -36,7 +34,7 @@ export type FacebookVideoMessage = {
 /**
  * facebook 聲音訊息
  */
-export type FacebookAudioMessage = {
+type FacebookAudioMessage = {
   attachment: {
     type: 'audio';
     payload: {
@@ -48,7 +46,7 @@ export type FacebookAudioMessage = {
 /**
  * facebook 按鈕訊息
  */
-export type FacebookButtonMessage = {
+type FacebookButtonMessage = {
   attachment: {
     type: 'template';
     payload: {
@@ -62,7 +60,7 @@ export type FacebookButtonMessage = {
 /**
  * facebook 輪播訊息
  */
-export type FacebookCarouselMessage = {
+type FacebookCarouselMessage = {
   attachment: {
     type: 'template';
     payload: {
@@ -75,4 +73,24 @@ export type FacebookCarouselMessage = {
       }>;
     };
   };
+};
+
+type FacebookMessage =
+  | FacebookTextMessage
+  | FacebookImageMessage
+  | FacebookVideoMessage
+  | FacebookAudioMessage
+  | FacebookButtonMessage
+  | FacebookCarouselMessage;
+type FacebookMessages = Array<FacebookMessage>;
+
+export {
+  FacebookMessages,
+  FacebookMessage,
+  FacebookTextMessage,
+  FacebookImageMessage,
+  FacebookVideoMessage,
+  FacebookAudioMessage,
+  FacebookButtonMessage,
+  FacebookCarouselMessage,
 };

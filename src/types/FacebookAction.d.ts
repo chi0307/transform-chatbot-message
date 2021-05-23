@@ -1,7 +1,7 @@
 /**
  * facebook 按鈕「 postback 」事件
  */
-export type FacebookPostbackAction = {
+type FacebookPostbackAction = {
   type: 'postback';
   title: String;
   payload: String;
@@ -10,7 +10,7 @@ export type FacebookPostbackAction = {
 /**
  * facebook 按鈕「 url 」事件
  */
-export type FacebookUrlAction = {
+type FacebookUrlAction = {
   type: 'web_url';
   title: String;
   url: String;
@@ -19,8 +19,12 @@ export type FacebookUrlAction = {
 /**
  * facebook 按鈕「 phone 」事件
  */
-export type FacebookPhoneAction = {
+type FacebookPhoneAction = {
   type: 'phone_number';
   title: String;
   payload: String;
 };
+
+type FacebookAction = FacebookPostbackAction | FacebookUrlAction | FacebookPhoneAction;
+
+export { FacebookAction, FacebookPostbackAction, FacebookUrlAction, FacebookPhoneAction };

@@ -1,10 +1,6 @@
-import { PostbackAction, UrlAction, PhoneAction } from './types/Actions';
-import { LinePostbackAction, LineUrlAction, LinePhoneAction } from './types/LineActions';
-import { FacebookPostbackAction, FacebookUrlAction, FacebookPhoneAction } from './types/FacebookActions';
-
-type Action = PostbackAction | UrlAction | PhoneAction;
-type LineAction = LinePostbackAction | LineUrlAction | LinePhoneAction;
-type FacebookAction = FacebookPostbackAction | FacebookUrlAction | FacebookPhoneAction;
+import { Action } from './types/Action';
+import { LineAction } from './types/LineAction';
+import { FacebookAction } from './types/FacebookAction';
 
 /**
  * 將「共用按鈕事件格式」轉換成「 line 按鈕事件格式」

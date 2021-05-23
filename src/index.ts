@@ -1,39 +1,5 @@
-import { TextMessage, ImageMessage, VideoMessage, AudioMessage, ButtonMessage, CarouselMessage } from './types/Message';
-import {
-  LineTextMessage,
-  LineImageMessage,
-  LineVideoMessage,
-  LineAudioMessage,
-  LineButtonMessage,
-  LineCarouselMessage,
-} from './types/LineMessage';
-import {
-  FacebookTextMessage,
-  FacebookImageMessage,
-  FacebookVideoMessage,
-  FacebookAudioMessage,
-  FacebookButtonMessage,
-  FacebookCarouselMessage,
-} from './types/FacebookMessage';
+import { Message, LineMessage, FacebookMessage } from '../types';
 import { transformToLineActions, transformToFacebookActions } from './transformActions';
-
-type Message = TextMessage | ImageMessage | VideoMessage | AudioMessage | ButtonMessage | CarouselMessage;
-
-type LineMessage =
-  | LineTextMessage
-  | LineImageMessage
-  | LineVideoMessage
-  | LineAudioMessage
-  | LineButtonMessage
-  | LineCarouselMessage;
-
-type FacebookMessage =
-  | FacebookTextMessage
-  | FacebookImageMessage
-  | FacebookVideoMessage
-  | FacebookAudioMessage
-  | FacebookButtonMessage
-  | FacebookCarouselMessage;
 
 /**
  * 將「共用訊息格式」轉換成「 line 專用訊息格式」

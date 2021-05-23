@@ -1,11 +1,9 @@
-import { PostbackAction, UrlAction, PhoneAction } from './Actions';
-
-type Action = PostbackAction | UrlAction | PhoneAction;
+import { Action } from './Action';
 
 /**
  * 共用文字訊息
  */
-export type TextMessage = {
+type TextMessage = {
   type: 'text';
   text: String;
 };
@@ -13,7 +11,7 @@ export type TextMessage = {
 /**
  * 共用圖片訊息
  */
-export type ImageMessage = {
+type ImageMessage = {
   type: 'image';
   imageUrl: String;
   previewImageUrl: String;
@@ -22,7 +20,7 @@ export type ImageMessage = {
 /**
  * 共用影片訊息
  */
-export type VideoMessage = {
+type VideoMessage = {
   type: 'video';
   videoUrl: String;
   previewImageUrl: String;
@@ -31,7 +29,7 @@ export type VideoMessage = {
 /**
  * 共用聲音訊息
  */
-export type AudioMessage = {
+type AudioMessage = {
   type: 'audio';
   audioUrl: String;
   duration: Number;
@@ -40,7 +38,7 @@ export type AudioMessage = {
 /**
  * 共用按鈕訊息
  */
-export type ButtonMessage = {
+type ButtonMessage = {
   type: 'button';
   altText: String;
   title?: String;
@@ -51,7 +49,7 @@ export type ButtonMessage = {
 /**
  * 共用輪播訊息
  */
-export type CarouselMessage = {
+type CarouselMessage = {
   type: 'carousel';
   altText: String;
   columns: Array<{
@@ -61,3 +59,8 @@ export type CarouselMessage = {
     buttons: Array<Action>;
   }>;
 };
+
+type Message = TextMessage | ImageMessage | VideoMessage | AudioMessage | ButtonMessage | CarouselMessage;
+type Messages = Array<Message>;
+
+export { Messages, Message, TextMessage, ImageMessage, VideoMessage, AudioMessage, ButtonMessage, CarouselMessage };

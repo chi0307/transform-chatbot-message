@@ -1,6 +1,6 @@
 {
   "name": "@chi0307/transform-chatbot-message",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,6 +22,7 @@
   },
   "files": [
     "dist/*",
-    "src/*"
+    "src/*",
+    "types.d.ts"
   ]
 }

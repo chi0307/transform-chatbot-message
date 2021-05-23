@@ -1,7 +1,7 @@
 /**
  * 共用按鈕「 postback 」事件
  */
-export type PostbackAction = {
+type PostbackAction = {
   type: 'postback';
   title: String;
   data: String;
@@ -10,7 +10,7 @@ export type PostbackAction = {
 /**
  * 共用按鈕「 url 」事件
  */
-export type UrlAction = {
+type UrlAction = {
   type: 'url';
   title: String;
   url: String;
@@ -19,8 +19,12 @@ export type UrlAction = {
 /**
  * 共用按鈕「 phone 」事件
  */
-export type PhoneAction = {
+type PhoneAction = {
   type: 'phone';
   title: String;
   number: String;
 };
+
+type Action = PostbackAction | UrlAction | PhoneAction;
+
+export { Action, PostbackAction, UrlAction, PhoneAction };
