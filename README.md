@@ -20,16 +20,33 @@ let message = {
 };
 
 let facebookMessage = transformToFacebookMessage(message);
-let lineMessage = transformToLineMessage(message);
+// Facebook 訊息結構
+let FacebookPushMessage = {
+  recipient: {
+    id: FB_SENDER_PSID,
+  },
+  message: facebookMessage,
+};
 
-// 將 Messsage 進行推播
+let lineMessage = transformToLineMessage(message);
+// Line 訊息結構
+let LinePushMessage = {
+  to: LINE_USER_ID,
+  messages: [lineMessage],
+};
 ```
+
+---
+
+# Example
+
+https://github.com/chi0307/transform-chatbot-message/tree/master/example
 
 ---
 
 ## 文字訊息
 
-```typescript
+```javascript
 {
   "type": "text",
   "text": String
@@ -44,7 +61,7 @@ let lineMessage = transformToLineMessage(message);
 
 ## 圖片訊息
 
-```typescript
+```javascript
 {
   "type": "image",
   "imageUrl": String,
@@ -61,7 +78,7 @@ let lineMessage = transformToLineMessage(message);
 
 ## 影片訊息
 
-```typescript
+```javascript
 {
   "type": "video",
   "videoUrl": String,
@@ -78,7 +95,7 @@ let lineMessage = transformToLineMessage(message);
 
 ## 聲音訊息
 
-```typescript
+```javascript
 {
   "type": "audio",
   "audioUrl": String,
@@ -95,7 +112,7 @@ let lineMessage = transformToLineMessage(message);
 
 ## 按鈕訊息
 
-```typescript
+```javascript
 {
   "type": "button",
   "altText": String,
@@ -116,7 +133,7 @@ let lineMessage = transformToLineMessage(message);
 
 ## 輪播訊息
 
-```typescript
+```javascript
 {
   "type": "carousel",
   "altText": String,
@@ -144,7 +161,7 @@ let lineMessage = transformToLineMessage(message);
 
 ### 回覆訊息 (PostBack)
 
-```typescript
+```javascript
 {
   "type": "postback",
   "title": String,
@@ -161,7 +178,7 @@ let lineMessage = transformToLineMessage(message);
 
 ### 打開網頁 (Url)
 
-```typescript
+```javascript
 {
   "type": "url",
   "title": String,
@@ -178,7 +195,7 @@ let lineMessage = transformToLineMessage(message);
 
 ### 打電話 (Phone)
 
-```typescript
+```javascript
 {
   "type": "phone",
   "title": String,
