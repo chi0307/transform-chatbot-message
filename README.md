@@ -44,6 +44,14 @@ https://github.com/chi0307/transform-chatbot-message/tree/master/example
 
 ---
 
+# GUI
+
+可搭配網頁產生 json
+
+https://chi0307.github.io/side/chatbot
+
+---
+
 ## 文字訊息
 
 ```javascript
