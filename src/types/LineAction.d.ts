@@ -5,6 +5,7 @@ type LinePostbackAction = {
   type: 'postback';
   label: String;
   data: String;
+  displayText?: String;
 };
 
 /**

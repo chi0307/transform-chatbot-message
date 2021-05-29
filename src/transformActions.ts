@@ -16,6 +16,7 @@ const transformToLineActions = (actions: Array<Action>) => {
         lineAction = {
           type: 'postback',
           label: action.title,
+          displayText: action.title,
           data: action.data,
         };
         break;

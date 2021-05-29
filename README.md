@@ -161,7 +161,7 @@ https://chi0307.github.io/side/chatbot
 | column.title    | 單一區塊標題              | 40 字元 (Optional)                                                                                                                                   | 80 字元            |
 | column.text     | 單一區塊內文              | 120 字元 (no image or title) <br> 60 字元 (message with an image or title)                                                                           | 80 字元 (Optional) |
 | column.imageUrl | 單一區塊圖片 (Optional)   | 網址長度 1000 字元<br>HTTPS over TLS 1.2 or later<br>JPEG or PNG <br>Aspect ratio: 1:1.51<br>Max width: 1024px<br>Max file size: 10 MB<br>(Optional) | (Optional)         |
-| buttons         | [按鈕事件](#按鈕事件)陣列 | 最多 3 個                                                                                                                                            | 最多 3 個          |
+| column.buttons  | [按鈕事件](#按鈕事件)陣列 | 最多 3 個                                                                                                                                            | 最多 3 個          |
 
 ---
 
@@ -179,7 +179,7 @@ https://chi0307.github.io/side/chatbot
 
 | 欄位  | 說明                                |
 | ----- | ----------------------------------- |
-| title | 按鈕文字                            |
+| title | 按鈕文字與使用者顯示回傳文字        |
 | data  | 回覆內容，需使用 webhook 接收並處理 |
 
 ---
