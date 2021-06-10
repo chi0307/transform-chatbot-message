@@ -48,7 +48,7 @@ https://github.com/chi0307/transform-chatbot-message/tree/master/example
 
 可搭配網頁產生 json
 
-https://chi0307.github.io/side/chatbot
+https://chi0307.github.io/side/chatbot-json-toolbox
 
 ---
 
