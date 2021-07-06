@@ -51,7 +51,7 @@ const transformToLineMessage = (message: Message) => {
         altText: message.altText,
         template: {
           type: 'buttons',
-          title: message.title,
+          title: message.title || undefined,
           text: message.text,
           actions: transformToLineActions(message.buttons),
         },
@@ -62,9 +62,9 @@ const transformToLineMessage = (message: Message) => {
     case 'carousel': {
       const columns = message.columns.map((column) => {
         return {
-          title: column.title,
-          text: column.text,
-          thumbnailImageUrl: column.imageUrl,
+          title: column.title || undefined,
+          text: column.text || column.title,
+          thumbnailImageUrl: column.imageUrl || undefined,
           actions: transformToLineActions(column.buttons),
         };
       });
@@ -168,9 +168,9 @@ const transformToFacebookMessage = (message: Message) => {
     case 'carousel': {
       const elements = message.columns.map((column) => {
         return {
-          title: column.title,
-          subtitle: column.text,
-          image_url: column.imageUrl,
+          title: column.title || column.text,
+          subtitle: column.text || undefined,
+          image_url: column.imageUrl || undefined,
           buttons: transformToFacebookActions(column.buttons),
         };
       });
