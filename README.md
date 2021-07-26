@@ -19,8 +19,8 @@ let message = {
   text: 'Hello World!!',
 };
 
-let facebookMessage = transformToFacebookMessage(message);
 // Facebook 訊息結構
+let facebookMessage = transformToFacebookMessage(message);
 let FacebookPushMessage = {
   recipient: {
     id: FB_SENDER_PSID,
@@ -28,8 +28,15 @@ let FacebookPushMessage = {
   message: facebookMessage,
 };
 
-let lineMessage = transformToLineMessage(message);
 // Line 訊息結構
+let lineMessage = transformToLineMessage(message);
+let LinePushMessage = {
+  to: LINE_USER_ID,
+  messages: [lineMessage],
+};
+
+// Line 訊息使用 flex
+let lineMessage = transformToLineMessage(message, { flex: true });
 let LinePushMessage = {
   to: LINE_USER_ID,
   messages: [lineMessage],
@@ -120,6 +127,8 @@ https://chi0307.github.io/side/chatbot-json-toolbox
 
 ## 按鈕訊息
 
+可以使用 flex 結構
+
 ```javascript
 {
   "type": "button",
@@ -140,6 +149,8 @@ https://chi0307.github.io/side/chatbot-json-toolbox
 ---
 
 ## 輪播訊息
+
+可以使用 flex 結構
 
 ```javascript
 {
@@ -162,6 +173,8 @@ https://chi0307.github.io/side/chatbot-json-toolbox
 | column.text     | 單一區塊內文              | 120 字元 (no image or title) <br> 60 字元 (message with an image or title)                                                                           | 80 字元 (Optional) |
 | column.imageUrl | 單一區塊圖片 (Optional)   | 網址長度 1000 字元<br>HTTPS over TLS 1.2 or later<br>JPEG or PNG <br>Aspect ratio: 1:1.51<br>Max width: 1024px<br>Max file size: 10 MB<br>(Optional) | (Optional)         |
 | column.buttons  | [按鈕事件](#按鈕事件)陣列 | 最多 3 個                                                                                                                                            | 最多 3 個          |
+
+如果 column.title 、 column.text 只填寫其中一個的時候，會自動填補到 Line text 與 FB title
 
 ---
 

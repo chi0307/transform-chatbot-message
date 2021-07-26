@@ -66,13 +66,86 @@ type LineCarouselMessage = {
   };
 };
 
+type LineButtonFlexMessage = {
+  type: 'flex';
+  altText: String;
+  contents: {
+    type: 'bubble';
+    size: String;
+    body: {
+      type: 'box';
+      layout: 'vertical';
+      contents: Array<{
+        type: 'text';
+        text: String;
+        wrap: true;
+        offsetTop: String;
+        weight?: String;
+      }>;
+      backgroundColor: String;
+    };
+    footer: {
+      type: 'box';
+      layout: 'vertical';
+      contents: Array<{
+        type: 'button';
+        height: String;
+        action: LineAction;
+      }>;
+    };
+  };
+};
+
+type LineCarouselFlexMessage = {
+  type: 'flex';
+  altText: String;
+  contents: {
+    type: 'carousel';
+    contents: Array<{
+      type: 'bubble';
+      size: String;
+      hero?: {
+        type: 'image';
+        url: String;
+        size: String;
+        aspectMode: String;
+        aspectRatio: String;
+      };
+      body: {
+        type: 'box';
+        layout: 'vertical';
+        contents: Array<{
+          type: 'text';
+          text: String;
+          wrap: true;
+          offsetTop: String;
+          weight?: String;
+        }>;
+        borderColor: String;
+        borderWidth: String;
+      };
+      footer: {
+        type: 'box';
+        layout: 'vertical';
+        contents: Array<{
+          type: 'button';
+          height: String;
+          action: LineAction;
+        }>;
+      };
+    }>;
+  };
+};
+
 type LineMessage =
   | LineTextMessage
   | LineImageMessage
   | LineVideoMessage
   | LineAudioMessage
   | LineButtonMessage
-  | LineCarouselMessage;
+  | LineCarouselMessage
+  | LineButtonFlexMessage
+  | LineCarouselFlexMessage;
 type LineMessages = Array<LineMessage>;
 
 export {
@@ -84,4 +157,6 @@ export {
   LineAudioMessage,
   LineButtonMessage,
   LineCarouselMessage,
+  LineButtonFlexMessage,
+  LineCarouselFlexMessage,
 };
