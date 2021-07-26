@@ -70,7 +70,7 @@ const transformToFacebookMessage = (message: Message) => {
       const elements = message.columns.map((column) => {
         return {
           title: column.title || column.text,
-          subtitle: column.text || undefined,
+          subtitle: column.title && column.text ? column.text : undefined,
           image_url: column.imageUrl || undefined,
           buttons: transformToFacebookActions(column.buttons),
         };

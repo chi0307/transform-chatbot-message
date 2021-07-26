@@ -197,7 +197,7 @@ const transformToLineMessage = (message: Message, { flex = false } = {}) => {
       } else {
         const columns = message.columns.map((column) => {
           return {
-            title: column.title || undefined,
+            title: column.title && column.text ? column.title : undefined,
             text: column.text || column.title,
             thumbnailImageUrl: column.imageUrl || undefined,
             actions: transformToLineActions(column.buttons),
