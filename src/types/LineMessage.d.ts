@@ -66,6 +66,9 @@ type LineCarouselMessage = {
   };
 };
 
+/**
+ * line flex 按鈕訊息
+ */
 type LineButtonFlexMessage = {
   type: 'flex';
   altText: String;
@@ -96,6 +99,9 @@ type LineButtonFlexMessage = {
   };
 };
 
+/**
+ * line flex 輪播訊息
+ */
 type LineCarouselFlexMessage = {
   type: 'flex';
   altText: String;

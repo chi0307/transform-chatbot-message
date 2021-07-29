@@ -1,2 +1,2 @@
-export * from './transformLineMessage';
-export * from './transformFacebookMessage';
+export * from './transformLineMessages';
+export * from './transformFacebookMessages';
