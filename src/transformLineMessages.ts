@@ -63,16 +63,13 @@ const transformToLineMessage = (message: Message, { flex = false } = {}) => {
           },
         ];
         if (message.title) {
-          contents = [
-            {
-              type: 'text',
-              text: message.title,
-              wrap: true,
-              offsetTop: 'sm',
-              weight: 'bold',
-            },
-            ...contents,
-          ];
+          contents.unshift({
+            type: 'text',
+            text: message.title,
+            wrap: true,
+            offsetTop: 'sm',
+            weight: 'bold',
+          });
         }
 
         lineMessage = {
@@ -164,10 +161,7 @@ const transformToLineMessage = (message: Message, { flex = false } = {}) => {
                 });
               }
               if (contents.length >= 2) {
-                contents[0] = {
-                  ...contents[0],
-                  weight: 'bold',
-                };
+                contents[0].weight = 'blod';
               }
 
               return {

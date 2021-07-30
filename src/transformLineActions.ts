@@ -1,5 +1,4 @@
-import { Action } from './types/Action';
-import { LineAction } from './types/LineAction';
+import { Action, LineAction } from '../types';
 
 /**
  * 將「共用按鈕事件格式」轉換成「 line 按鈕事件格式」

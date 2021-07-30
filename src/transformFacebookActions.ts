@@ -1,5 +1,4 @@
-import { Action } from './types/Action';
-import { FacebookAction } from './types/FacebookAction';
+import { Action, FacebookAction } from '../types';
 
 /**
  * 將「共用按鈕事件格式」轉換成「 facebook 按鈕事件格式」
