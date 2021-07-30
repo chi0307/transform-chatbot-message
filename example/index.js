@@ -2,10 +2,7 @@ require('dotenv').config();
 const { transformToLineMessage, transformToFacebookMessage } = require('@chi0307/transform-chatbot-message');
 const axios = require('axios');
 
-const LINE_TOKEN = process.env.LINE_TOKEN;
-const LINE_USER_ID = process.env.LINE_USER_ID;
-const FB_SENDER_PSID = process.env.FB_SENDER_PSID;
-const FB_PAGE_ACCESS_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN;
+const { LINE_TOKEN, LINE_USER_ID, FB_SENDER_PSID, FB_PAGE_ACCESS_TOKEN, SLACK_WEBHOOK_URL } = process.env;
 
 let imageUrl = 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg';
 let videoUrl = 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4';
@@ -128,3 +125,29 @@ function pushFacebookMessage(message) {
 }
 
 pushLineMessage(textMessage);
+
+function pushSlackMessages(messages) {
+  let slackMessages = transformToSlackMessages(messages);
+
+  const config = {
+    method: 'post',
+    url: SLACK_WEBHOOK_URL,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+      blocks: slackMessages,
+      text: 'New Message',
+    },
+  };
+
+  axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error.response.data);
+    });
+}
+
+pushSlackMessages([buttonMessage]);
